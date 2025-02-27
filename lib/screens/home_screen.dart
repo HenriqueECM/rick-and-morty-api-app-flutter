@@ -51,8 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     leading: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: CachedNetworkImage(
-                        imageUrl: character.image,
-                        width: 50,
+                        imageUrl: character.image, // vai baixar as imagens dos personagens
+                        width: 50, // unidade em pixel
                         height: 50,
                         fit: BoxFit.cover,
                         placeholder: (context, url) =>
