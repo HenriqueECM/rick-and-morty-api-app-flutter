@@ -41,38 +41,40 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: characters.length,
               itemBuilder: (context, index) {
                 final character = characters[index];
-                return GestureDetector( 
-                  onTap: () {
-               Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Detailscreen()),
-                );
-              } ,
-                  child : Card(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: ListTile(
-                    leading: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: CachedNetworkImage(
-                        imageUrl: character.image, // vai baixar as imagens dos personagens
-                        width: 50, // unidade em pixel
-                        height: 50,
-                        fit: BoxFit.cover,
-                        placeholder: (context, url) =>
-                            const CircularProgressIndicator(),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
+                return GestureDetector(
+                    onTap: () {
+                      print("Clicou no personagem: ${character.name}");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Detailscreen(character)),
+                      );
+                    },
+                    child: Card(
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 8),
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                    ),
-                    title: Text(character.name),
-                    subtitle: Text('Status: ${character.status}'),
-                  ),
-                ));
+                      child: ListTile(
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: CachedNetworkImage(
+                            imageUrl: character
+                                .image, // vai baixar as imagens dos personagens
+                            width: 50, // unidade em pixel
+                            height: 50,
+                            fit: BoxFit.cover,
+                            placeholder: (context, url) =>
+                                const CircularProgressIndicator(),
+                            errorWidget: (context, url, error) =>
+                                const Icon(Icons.error),
+                          ),
+                        ),
+                        title: Text(character.name),
+                        subtitle: Text('Status: ${character.status}'),
+                      ),
+                    ));
               },
             );
           }
