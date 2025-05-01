@@ -13,7 +13,6 @@ Este projeto foi desenvolvido como parte do aprendizado de programação de apli
 
 - **Exibição de Personagens**: O aplicativo consome a API para exibir uma lista de personagens de Rick and Morty, com imagens, nome e status.
 - **Detalhes dos Personagens**: Ao selecionar um personagem, o usuário pode visualizar informações detalhadas, como origem, status e espécie.
-- **Exibição de Episódios**: O aplicativo também permite visualizar os episódios da série, com informações sobre título, temporada e data de lançamento.
 - **Integração em Tempo Real**: O aplicativo consome dados da API em tempo real, garantindo que as informações estejam sempre atualizadas.
 - **Busca de Personagens**: Funcionalidade de busca para encontrar personagens específicos da série.
 
